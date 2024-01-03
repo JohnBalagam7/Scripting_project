@@ -6,6 +6,8 @@
 
 ##########
 
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -42,6 +44,12 @@ function list_users_with_read_access {
     fi
 }
 
+function helper{
+    execuatables_cmd_args = 2
+    if [$# -ne $execuatables_cmd_args]; then
+      echo "Please check the 2 cmd args"
+    fi
+}
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
